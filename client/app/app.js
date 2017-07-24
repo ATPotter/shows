@@ -24,8 +24,12 @@ import socket from '../components/socket/socket.service';
 
 import './app.css';
 
+import FooModule from './foo/foo.component';
+
+
 angular.module('showsApp', [ngCookies, ngResource, ngSanitize, 'btford.socket-io', ngRoute,
-  uiBootstrap, navbar, footer, main, constants, socket, util
+  uiBootstrap, navbar, footer, main, constants, socket, util,
+  FooModule
 ])
   .config(routeConfig);
 
