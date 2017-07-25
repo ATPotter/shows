@@ -1,11 +1,15 @@
 <div>
 	
+	<p>Show number {{fooCtrl.showNumber}}</p>
+	
 	<table>
 		<tr ng-repeat="row in fooCtrl.showsList">
-			<td>{{row.showNumber}}</td>
 			<td>{{row.showDate}}</td>
-			<td>{{row.showTitle}}</td>
-			<td>{{row.clubName}}
+			<td><a href="oneShow/{{row.showNumber}}">{{row.showTitle}}</a></td>
+			<td>
+				<div ng-show="'' === row.clubUrl">{{row.clubName}}</div>
+				<div ng-hide="'' === row.clubUrl"><a href="{{row.clubUrl}}">{{row.clubName}}</a></div>
+			</td>
 			<td>{{row.role}}</td>
 		</tr>
 	</table>
